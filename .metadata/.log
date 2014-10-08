@@ -1,0 +1,451 @@
+!SESSION 2014-10-08 13:06:24.256 -----------------------------------------------
+eclipse.buildId=3.4.0.201310051614-RELEASE-e43
+java.version=1.7.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springsource.sts.ide
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springsource.sts.ide
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-10-08 13:07:35.289
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-10-08 13:07:35.289
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\hdas_000'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springsource.ide.eclipse.commons.frameworks.core 0 0 2014-10-08 13:07:36.774
+!MESSAGE Result of converting legacy STS 2.x workspace preferences to 3.x
+!SUBENTRY 1 org.springsource.ide.eclipse.commons.frameworks.core 0 0 2014-10-08 13:07:36.774
+!MESSAGE Converted legacy STS plugin preferences
+!SUBENTRY 1 unknown 0 0 2014-10-08 13:07:36.774
+!MESSAGE OK
+!SUBENTRY 1 org.springsource.ide.eclipse.commons.frameworks.core 0 0 2014-10-08 13:07:36.775
+!MESSAGE Converted legacy Roo plugin state locations
+!SUBENTRY 1 org.springsource.ide.eclipse.commons.frameworks.core 0 0 2014-10-08 13:07:36.775
+!MESSAGE Converted legacy STS plugin state locations
+
+!ENTRY com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2014-10-08 13:07:40.864
+!MESSAGE Error creating server instance. Check access permission for the directory C:/Program Files/Springsource/vfabric-tc-server-developer-2.9.3.RELEASE and its files and subdirectories.
+!SUBENTRY 1 com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2014-10-08 13:07:40.864
+!MESSAGE Output of the instance creation command:
+Creating instance 'base-instance' ...
+  Using separate layout
+Exception in thread "main" java.lang.RuntimeException: java.io.IOException: Failed to create directory 'C:\Program Files\Springsource\vfabric-tc-server-developer-2.9.3.RELEASE\base-instance'
+	at com.springsource.tcruntime.instance.internal.layout.LayoutUtils.createLayoutIdentifier(LayoutUtils.java:23)
+	at com.springsource.tcruntime.instance.internal.create.CreateCommandExecutor.execute(CreateCommandExecutor.java:84)
+	at com.springsource.tcruntime.instance.internal.create.CreateCommandExecutor.execute(CreateCommandExecutor.java:1)
+	at com.springsource.tcruntime.instance.internal.templates.AbstractTemplateCommandExecutor.execute(AbstractTemplateCommandExecutor.java:1)
+	at com.springsource.tcruntime.instance.internal.AbstractCommand.execute(AbstractCommand.java:22)
+	at com.springsource.tcruntime.instance.TcRuntimeInstance.run(TcRuntimeInstance.java:77)
+	at com.springsource.tcruntime.instance.TcRuntimeInstance.main(TcRuntimeInstance.java:148)
+Caused by: java.io.IOException: Failed to create directory 'C:\Program Files\Springsource\vfabric-tc-server-developer-2.9.3.RELEASE\base-instance'
+	at com.springsource.tcruntime.instance.internal.util.FileUtils.writeFile(FileUtils.java:115)
+	at com.springsource.tcruntime.instance.internal.layout.LayoutUtils.createLayoutIdentifier(LayoutUtils.java:21)
+	... 6 more
+
+
+!ENTRY org.springsource.ide.eclipse.commons.configurator 4 0 2014-10-08 13:07:40.865
+!MESSAGE The server could not be created.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Error creating server instance. Check access permission for the directory C:/Program Files/Springsource/vfabric-tc-server-developer-2.9.3.RELEASE and its files and subdirectories.
+	at com.vmware.vfabric.ide.eclipse.tcserver.internal.core.TcServerUtil.handleResult(TcServerUtil.java:130)
+	at com.vmware.vfabric.ide.eclipse.tcserver.internal.core.TcServerUtil.executeInstanceCreation(TcServerUtil.java:91)
+	at com.vmware.vfabric.ide.eclipse.tcserver.internal.core.TcServer21ServerHandlerCallback.configureServer(TcServer21ServerHandlerCallback.java:33)
+	at org.springsource.ide.eclipse.commons.internal.configurator.server.ServerDescriptor$ServerHandlerCallbackDelegate.configureServer(ServerDescriptor.java:40)
+	at org.springsource.ide.eclipse.commons.configurator.ServerHandler.createServer(ServerHandler.java:318)
+	at org.springsource.ide.eclipse.commons.configurator.ServerHandler.createServer(ServerHandler.java:157)
+	at org.springsource.ide.eclipse.commons.internal.configurator.server.ConfigurableServerExtension.configure(ConfigurableServerExtension.java:70)
+	at org.springsource.ide.eclipse.commons.internal.configurator.ConfiguratorImporter$4.run(ConfiguratorImporter.java:419)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Contains: Output of the instance creation command:
+Creating instance 'base-instance' ...
+  Using separate layout
+Exception in thread "main" java.lang.RuntimeException: java.io.IOException: Failed to create directory 'C:\Program Files\Springsource\vfabric-tc-server-developer-2.9.3.RELEASE\base-instance'
+	at com.springsource.tcruntime.instance.internal.layout.LayoutUtils.createLayoutIdentifier(LayoutUtils.java:23)
+	at com.springsource.tcruntime.instance.internal.create.CreateCommandExecutor.execute(CreateCommandExecutor.java:84)
+	at com.springsource.tcruntime.instance.internal.create.CreateCommandExecutor.execute(CreateCommandExecutor.java:1)
+	at com.springsource.tcruntime.instance.internal.templates.AbstractTemplateCommandExecutor.execute(AbstractTemplateCommandExecutor.java:1)
+	at com.springsource.tcruntime.instance.internal.AbstractCommand.execute(AbstractCommand.java:22)
+	at com.springsource.tcruntime.instance.TcRuntimeInstance.run(TcRuntimeInstance.java:77)
+	at com.springsource.tcruntime.instance.TcRuntimeInstance.main(TcRuntimeInstance.java:148)
+Caused by: java.io.IOException: Failed to create directory 'C:\Program Files\Springsource\vfabric-tc-server-developer-2.9.3.RELEASE\base-instance'
+	at com.springsource.tcruntime.instance.internal.util.FileUtils.writeFile(FileUtils.java:115)
+	at com.springsource.tcruntime.instance.internal.layout.LayoutUtils.createLayoutIdentifier(LayoutUtils.java:21)
+	... 6 more
+
+!SUBENTRY 1 com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2014-10-08 13:07:40.866
+!MESSAGE Error creating server instance. Check access permission for the directory C:/Program Files/Springsource/vfabric-tc-server-developer-2.9.3.RELEASE and its files and subdirectories.
+!SUBENTRY 2 com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2014-10-08 13:07:40.866
+!MESSAGE Output of the instance creation command:
+Creating instance 'base-instance' ...
+  Using separate layout
+Exception in thread "main" java.lang.RuntimeException: java.io.IOException: Failed to create directory 'C:\Program Files\Springsource\vfabric-tc-server-developer-2.9.3.RELEASE\base-instance'
+	at com.springsource.tcruntime.instance.internal.layout.LayoutUtils.createLayoutIdentifier(LayoutUtils.java:23)
+	at com.springsource.tcruntime.instance.internal.create.CreateCommandExecutor.execute(CreateCommandExecutor.java:84)
+	at com.springsource.tcruntime.instance.internal.create.CreateCommandExecutor.execute(CreateCommandExecutor.java:1)
+	at com.springsource.tcruntime.instance.internal.templates.AbstractTemplateCommandExecutor.execute(AbstractTemplateCommandExecutor.java:1)
+	at com.springsource.tcruntime.instance.internal.AbstractCommand.execute(AbstractCommand.java:22)
+	at com.springsource.tcruntime.instance.TcRuntimeInstance.run(TcRuntimeInstance.java:77)
+	at com.springsource.tcruntime.instance.TcRuntimeInstance.main(TcRuntimeInstance.java:148)
+Caused by: java.io.IOException: Failed to create directory 'C:\Program Files\Springsource\vfabric-tc-server-developer-2.9.3.RELEASE\base-instance'
+	at com.springsource.tcruntime.instance.internal.util.FileUtils.writeFile(FileUtils.java:115)
+	at com.springsource.tcruntime.instance.internal.layout.LayoutUtils.createLayoutIdentifier(LayoutUtils.java:21)
+	... 6 more
+
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2014-10-08 13:11:59.076
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: Unable to read repository at http://download.springsource.com/release/TOOLS/third-party/m2e-sts310/content.jar.
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.updateCache(CacheManager.java:371)
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:208)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:668)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.addChild(CompositeMetadataRepository.java:166)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.<init>(CompositeMetadataRepository.java:106)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepositoryFactory.load(CompositeMetadataRepositoryFactory.java:122)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:668)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:150)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:128)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:72)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:152)
+	at java.net.SocketInputStream.read(SocketInputStream.java:122)
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer(AbstractSessionInputBuffer.java:166)
+	at org.apache.http.impl.io.SocketInputBuffer.fillBuffer(SocketInputBuffer.java:90)
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.readLine(AbstractSessionInputBuffer.java:281)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:92)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:62)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:254)
+	at org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader(AbstractHttpClientConnection.java:289)
+	at org.apache.http.impl.conn.DefaultClientConnection.receiveResponseHeader(DefaultClientConnection.java:252)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.receiveResponseHeader(AbstractClientConnAdapter.java:219)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:300)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:127)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:715)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:520)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:906)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:805)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1074)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.openStreams(HttpClientRetrieveFileTransfer.java:621)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:879)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:570)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.sendRetrieveRequest(FileReader.java:422)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.readInto(FileReader.java:355)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:101)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:156)
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.updateCache(CacheManager.java:345)
+	... 19 more
+!SUBENTRY 1 org.eclipse.equinox.p2.transport.ecf 4 1002 2014-10-08 13:11:59.078
+!MESSAGE Unable to read repository at http://download.springsource.com/release/TOOLS/third-party/m2e-sts310/content.jar.
+!STACK 0
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:152)
+	at java.net.SocketInputStream.read(SocketInputStream.java:122)
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer(AbstractSessionInputBuffer.java:166)
+	at org.apache.http.impl.io.SocketInputBuffer.fillBuffer(SocketInputBuffer.java:90)
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.readLine(AbstractSessionInputBuffer.java:281)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:92)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:62)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:254)
+	at org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader(AbstractHttpClientConnection.java:289)
+	at org.apache.http.impl.conn.DefaultClientConnection.receiveResponseHeader(DefaultClientConnection.java:252)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.receiveResponseHeader(AbstractClientConnAdapter.java:219)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:300)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:127)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:715)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:520)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:906)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:805)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1074)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.openStreams(HttpClientRetrieveFileTransfer.java:621)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:879)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:570)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.sendRetrieveRequest(FileReader.java:422)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.readInto(FileReader.java:355)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:101)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:156)
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.updateCache(CacheManager.java:345)
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:208)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:668)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.addChild(CompositeMetadataRepository.java:166)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.<init>(CompositeMetadataRepository.java:106)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepositoryFactory.load(CompositeMetadataRepositoryFactory.java:122)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:668)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:150)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:128)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:72)
+!SESSION 2014-10-08 16:10:40.233 -----------------------------------------------
+eclipse.buildId=3.4.0.201310051614-RELEASE-e43
+java.version=1.7.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springsource.sts.ide
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springsource.sts.ide
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-10-08 16:21:01.466
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-10-08 16:21:29.758
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-10-08 16:21:29.759
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\hdas_000'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springsource.ide.eclipse.commons.frameworks.core 0 0 2014-10-08 16:21:31.148
+!MESSAGE Result of converting legacy STS 2.x workspace preferences to 3.x
+!SUBENTRY 1 org.springsource.ide.eclipse.commons.frameworks.core 0 0 2014-10-08 16:21:31.148
+!MESSAGE Converted legacy STS plugin preferences
+!SUBENTRY 1 unknown 0 0 2014-10-08 16:21:31.148
+!MESSAGE OK
+!SUBENTRY 1 org.springsource.ide.eclipse.commons.frameworks.core 0 0 2014-10-08 16:21:31.148
+!MESSAGE Converted legacy Roo plugin state locations
+!SUBENTRY 1 org.springsource.ide.eclipse.commons.frameworks.core 0 0 2014-10-08 16:21:31.148
+!MESSAGE Converted legacy STS plugin state locations
+
+!ENTRY com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2014-10-08 16:21:32.347
+!MESSAGE Error creating server instance. Check access permission for the directory C:/Program Files/Springsource/vfabric-tc-server-developer-2.9.3.RELEASE and its files and subdirectories.
+!SUBENTRY 1 com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2014-10-08 16:21:32.347
+!MESSAGE Output of the instance creation command:
+Creating instance 'base-instance' ...
+  Using separate layout
+Exception in thread "main" java.lang.RuntimeException: java.io.IOException: Failed to create directory 'C:\Program Files\Springsource\vfabric-tc-server-developer-2.9.3.RELEASE\base-instance'
+	at com.springsource.tcruntime.instance.internal.layout.LayoutUtils.createLayoutIdentifier(LayoutUtils.java:23)
+	at com.springsource.tcruntime.instance.internal.create.CreateCommandExecutor.execute(CreateCommandExecutor.java:84)
+	at com.springsource.tcruntime.instance.internal.create.CreateCommandExecutor.execute(CreateCommandExecutor.java:1)
+	at com.springsource.tcruntime.instance.internal.templates.AbstractTemplateCommandExecutor.execute(AbstractTemplateCommandExecutor.java:1)
+	at com.springsource.tcruntime.instance.internal.AbstractCommand.execute(AbstractCommand.java:22)
+	at com.springsource.tcruntime.instance.TcRuntimeInstance.run(TcRuntimeInstance.java:77)
+	at com.springsource.tcruntime.instance.TcRuntimeInstance.main(TcRuntimeInstance.java:148)
+Caused by: java.io.IOException: Failed to create directory 'C:\Program Files\Springsource\vfabric-tc-server-developer-2.9.3.RELEASE\base-instance'
+	at com.springsource.tcruntime.instance.internal.util.FileUtils.writeFile(FileUtils.java:115)
+	at com.springsource.tcruntime.instance.internal.layout.LayoutUtils.createLayoutIdentifier(LayoutUtils.java:21)
+	... 6 more
+
+
+!ENTRY org.springsource.ide.eclipse.commons.configurator 4 0 2014-10-08 16:21:32.348
+!MESSAGE The server could not be created.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Error creating server instance. Check access permission for the directory C:/Program Files/Springsource/vfabric-tc-server-developer-2.9.3.RELEASE and its files and subdirectories.
+	at com.vmware.vfabric.ide.eclipse.tcserver.internal.core.TcServerUtil.handleResult(TcServerUtil.java:130)
+	at com.vmware.vfabric.ide.eclipse.tcserver.internal.core.TcServerUtil.executeInstanceCreation(TcServerUtil.java:91)
+	at com.vmware.vfabric.ide.eclipse.tcserver.internal.core.TcServer21ServerHandlerCallback.configureServer(TcServer21ServerHandlerCallback.java:33)
+	at org.springsource.ide.eclipse.commons.internal.configurator.server.ServerDescriptor$ServerHandlerCallbackDelegate.configureServer(ServerDescriptor.java:40)
+	at org.springsource.ide.eclipse.commons.configurator.ServerHandler.createServer(ServerHandler.java:318)
+	at org.springsource.ide.eclipse.commons.configurator.ServerHandler.createServer(ServerHandler.java:157)
+	at org.springsource.ide.eclipse.commons.internal.configurator.server.ConfigurableServerExtension.configure(ConfigurableServerExtension.java:70)
+	at org.springsource.ide.eclipse.commons.internal.configurator.ConfiguratorImporter$4.run(ConfiguratorImporter.java:419)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Contains: Output of the instance creation command:
+Creating instance 'base-instance' ...
+  Using separate layout
+Exception in thread "main" java.lang.RuntimeException: java.io.IOException: Failed to create directory 'C:\Program Files\Springsource\vfabric-tc-server-developer-2.9.3.RELEASE\base-instance'
+	at com.springsource.tcruntime.instance.internal.layout.LayoutUtils.createLayoutIdentifier(LayoutUtils.java:23)
+	at com.springsource.tcruntime.instance.internal.create.CreateCommandExecutor.execute(CreateCommandExecutor.java:84)
+	at com.springsource.tcruntime.instance.internal.create.CreateCommandExecutor.execute(CreateCommandExecutor.java:1)
+	at com.springsource.tcruntime.instance.internal.templates.AbstractTemplateCommandExecutor.execute(AbstractTemplateCommandExecutor.java:1)
+	at com.springsource.tcruntime.instance.internal.AbstractCommand.execute(AbstractCommand.java:22)
+	at com.springsource.tcruntime.instance.TcRuntimeInstance.run(TcRuntimeInstance.java:77)
+	at com.springsource.tcruntime.instance.TcRuntimeInstance.main(TcRuntimeInstance.java:148)
+Caused by: java.io.IOException: Failed to create directory 'C:\Program Files\Springsource\vfabric-tc-server-developer-2.9.3.RELEASE\base-instance'
+	at com.springsource.tcruntime.instance.internal.util.FileUtils.writeFile(FileUtils.java:115)
+	at com.springsource.tcruntime.instance.internal.layout.LayoutUtils.createLayoutIdentifier(LayoutUtils.java:21)
+	... 6 more
+
+!SUBENTRY 1 com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2014-10-08 16:21:32.349
+!MESSAGE Error creating server instance. Check access permission for the directory C:/Program Files/Springsource/vfabric-tc-server-developer-2.9.3.RELEASE and its files and subdirectories.
+!SUBENTRY 2 com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2014-10-08 16:21:32.349
+!MESSAGE Output of the instance creation command:
+Creating instance 'base-instance' ...
+  Using separate layout
+Exception in thread "main" java.lang.RuntimeException: java.io.IOException: Failed to create directory 'C:\Program Files\Springsource\vfabric-tc-server-developer-2.9.3.RELEASE\base-instance'
+	at com.springsource.tcruntime.instance.internal.layout.LayoutUtils.createLayoutIdentifier(LayoutUtils.java:23)
+	at com.springsource.tcruntime.instance.internal.create.CreateCommandExecutor.execute(CreateCommandExecutor.java:84)
+	at com.springsource.tcruntime.instance.internal.create.CreateCommandExecutor.execute(CreateCommandExecutor.java:1)
+	at com.springsource.tcruntime.instance.internal.templates.AbstractTemplateCommandExecutor.execute(AbstractTemplateCommandExecutor.java:1)
+	at com.springsource.tcruntime.instance.internal.AbstractCommand.execute(AbstractCommand.java:22)
+	at com.springsource.tcruntime.instance.TcRuntimeInstance.run(TcRuntimeInstance.java:77)
+	at com.springsource.tcruntime.instance.TcRuntimeInstance.main(TcRuntimeInstance.java:148)
+Caused by: java.io.IOException: Failed to create directory 'C:\Program Files\Springsource\vfabric-tc-server-developer-2.9.3.RELEASE\base-instance'
+	at com.springsource.tcruntime.instance.internal.util.FileUtils.writeFile(FileUtils.java:115)
+	at com.springsource.tcruntime.instance.internal.layout.LayoutUtils.createLayoutIdentifier(LayoutUtils.java:21)
+	... 6 more
+
+!SESSION 2014-10-08 20:09:27.335 -----------------------------------------------
+eclipse.buildId=3.4.0.201310051614-RELEASE-e43
+java.version=1.7.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springsource.sts.ide
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springsource.sts.ide
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-10-08 20:09:34.263
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-10-08 20:09:43.193
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-10-08 20:09:43.194
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\hdas_000'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springsource.ide.eclipse.commons.frameworks.core 0 0 2014-10-08 20:09:44.772
+!MESSAGE Result of converting legacy STS 2.x workspace preferences to 3.x
+!SUBENTRY 1 org.springsource.ide.eclipse.commons.frameworks.core 0 0 2014-10-08 20:09:44.772
+!MESSAGE Converted legacy STS plugin preferences
+!SUBENTRY 1 unknown 0 0 2014-10-08 20:09:44.773
+!MESSAGE OK
+!SUBENTRY 1 org.springsource.ide.eclipse.commons.frameworks.core 0 0 2014-10-08 20:09:44.773
+!MESSAGE Converted legacy Roo plugin state locations
+!SUBENTRY 1 org.springsource.ide.eclipse.commons.frameworks.core 0 0 2014-10-08 20:09:44.773
+!MESSAGE Converted legacy STS plugin state locations
+
+!ENTRY com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2014-10-08 20:09:45.554
+!MESSAGE Error creating server instance. Check access permission for the directory C:/Program Files/Springsource/vfabric-tc-server-developer-2.9.3.RELEASE and its files and subdirectories.
+!SUBENTRY 1 com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2014-10-08 20:09:45.554
+!MESSAGE Output of the instance creation command:
+Creating instance 'base-instance' ...
+  Using separate layout
+Exception in thread "main" java.lang.RuntimeException: java.io.IOException: Failed to create directory 'C:\Program Files\Springsource\vfabric-tc-server-developer-2.9.3.RELEASE\base-instance'
+	at com.springsource.tcruntime.instance.internal.layout.LayoutUtils.createLayoutIdentifier(LayoutUtils.java:23)
+	at com.springsource.tcruntime.instance.internal.create.CreateCommandExecutor.execute(CreateCommandExecutor.java:84)
+	at com.springsource.tcruntime.instance.internal.create.CreateCommandExecutor.execute(CreateCommandExecutor.java:1)
+	at com.springsource.tcruntime.instance.internal.templates.AbstractTemplateCommandExecutor.execute(AbstractTemplateCommandExecutor.java:1)
+	at com.springsource.tcruntime.instance.internal.AbstractCommand.execute(AbstractCommand.java:22)
+	at com.springsource.tcruntime.instance.TcRuntimeInstance.run(TcRuntimeInstance.java:77)
+	at com.springsource.tcruntime.instance.TcRuntimeInstance.main(TcRuntimeInstance.java:148)
+Caused by: java.io.IOException: Failed to create directory 'C:\Program Files\Springsource\vfabric-tc-server-developer-2.9.3.RELEASE\base-instance'
+	at com.springsource.tcruntime.instance.internal.util.FileUtils.writeFile(FileUtils.java:115)
+	at com.springsource.tcruntime.instance.internal.layout.LayoutUtils.createLayoutIdentifier(LayoutUtils.java:21)
+	... 6 more
+
+
+!ENTRY org.springsource.ide.eclipse.commons.configurator 4 0 2014-10-08 20:09:45.555
+!MESSAGE The server could not be created.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Error creating server instance. Check access permission for the directory C:/Program Files/Springsource/vfabric-tc-server-developer-2.9.3.RELEASE and its files and subdirectories.
+	at com.vmware.vfabric.ide.eclipse.tcserver.internal.core.TcServerUtil.handleResult(TcServerUtil.java:130)
+	at com.vmware.vfabric.ide.eclipse.tcserver.internal.core.TcServerUtil.executeInstanceCreation(TcServerUtil.java:91)
+	at com.vmware.vfabric.ide.eclipse.tcserver.internal.core.TcServer21ServerHandlerCallback.configureServer(TcServer21ServerHandlerCallback.java:33)
+	at org.springsource.ide.eclipse.commons.internal.configurator.server.ServerDescriptor$ServerHandlerCallbackDelegate.configureServer(ServerDescriptor.java:40)
+	at org.springsource.ide.eclipse.commons.configurator.ServerHandler.createServer(ServerHandler.java:318)
+	at org.springsource.ide.eclipse.commons.configurator.ServerHandler.createServer(ServerHandler.java:157)
+	at org.springsource.ide.eclipse.commons.internal.configurator.server.ConfigurableServerExtension.configure(ConfigurableServerExtension.java:70)
+	at org.springsource.ide.eclipse.commons.internal.configurator.ConfiguratorImporter$4.run(ConfiguratorImporter.java:419)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Contains: Output of the instance creation command:
+Creating instance 'base-instance' ...
+  Using separate layout
+Exception in thread "main" java.lang.RuntimeException: java.io.IOException: Failed to create directory 'C:\Program Files\Springsource\vfabric-tc-server-developer-2.9.3.RELEASE\base-instance'
+	at com.springsource.tcruntime.instance.internal.layout.LayoutUtils.createLayoutIdentifier(LayoutUtils.java:23)
+	at com.springsource.tcruntime.instance.internal.create.CreateCommandExecutor.execute(CreateCommandExecutor.java:84)
+	at com.springsource.tcruntime.instance.internal.create.CreateCommandExecutor.execute(CreateCommandExecutor.java:1)
+	at com.springsource.tcruntime.instance.internal.templates.AbstractTemplateCommandExecutor.execute(AbstractTemplateCommandExecutor.java:1)
+	at com.springsource.tcruntime.instance.internal.AbstractCommand.execute(AbstractCommand.java:22)
+	at com.springsource.tcruntime.instance.TcRuntimeInstance.run(TcRuntimeInstance.java:77)
+	at com.springsource.tcruntime.instance.TcRuntimeInstance.main(TcRuntimeInstance.java:148)
+Caused by: java.io.IOException: Failed to create directory 'C:\Program Files\Springsource\vfabric-tc-server-developer-2.9.3.RELEASE\base-instance'
+	at com.springsource.tcruntime.instance.internal.util.FileUtils.writeFile(FileUtils.java:115)
+	at com.springsource.tcruntime.instance.internal.layout.LayoutUtils.createLayoutIdentifier(LayoutUtils.java:21)
+	... 6 more
+
+!SUBENTRY 1 com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2014-10-08 20:09:45.556
+!MESSAGE Error creating server instance. Check access permission for the directory C:/Program Files/Springsource/vfabric-tc-server-developer-2.9.3.RELEASE and its files and subdirectories.
+!SUBENTRY 2 com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2014-10-08 20:09:45.556
+!MESSAGE Output of the instance creation command:
+Creating instance 'base-instance' ...
+  Using separate layout
+Exception in thread "main" java.lang.RuntimeException: java.io.IOException: Failed to create directory 'C:\Program Files\Springsource\vfabric-tc-server-developer-2.9.3.RELEASE\base-instance'
+	at com.springsource.tcruntime.instance.internal.layout.LayoutUtils.createLayoutIdentifier(LayoutUtils.java:23)
+	at com.springsource.tcruntime.instance.internal.create.CreateCommandExecutor.execute(CreateCommandExecutor.java:84)
+	at com.springsource.tcruntime.instance.internal.create.CreateCommandExecutor.execute(CreateCommandExecutor.java:1)
+	at com.springsource.tcruntime.instance.internal.templates.AbstractTemplateCommandExecutor.execute(AbstractTemplateCommandExecutor.java:1)
+	at com.springsource.tcruntime.instance.internal.AbstractCommand.execute(AbstractCommand.java:22)
+	at com.springsource.tcruntime.instance.TcRuntimeInstance.run(TcRuntimeInstance.java:77)
+	at com.springsource.tcruntime.instance.TcRuntimeInstance.main(TcRuntimeInstance.java:148)
+Caused by: java.io.IOException: Failed to create directory 'C:\Program Files\Springsource\vfabric-tc-server-developer-2.9.3.RELEASE\base-instance'
+	at com.springsource.tcruntime.instance.internal.util.FileUtils.writeFile(FileUtils.java:115)
+	at com.springsource.tcruntime.instance.internal.layout.LayoutUtils.createLayoutIdentifier(LayoutUtils.java:21)
+	... 6 more
+
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-10-08 20:13:24.543
+!MESSAGE Failed to dispatch repository event to org.eclipse.m2e.core.internal.embedder.EclipseRepositoryListener: null
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-10-08 20:13:49.372
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-10-08 20:13:49.382
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.jdt.core 4 0 2014-10-08 20:13:50.091
+!MESSAGE Invalid ZIP archive: C:\Users\hdas_000\.m2\repository\commons-collections\commons-collections\3.1\commons-collections-3.1.jar
+
+!ENTRY org.eclipse.egit.ui 4 0 2014-10-08 20:24:11.228
+!MESSAGE Exception caught during execution of add command
+!STACK 0
+org.eclipse.jgit.api.errors.JGitInternalException: Exception caught during execution of add command
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:208)
+	at org.eclipse.egit.core.op.CommitOperation.addUntracked(CommitOperation.java:219)
+	at org.eclipse.egit.core.op.CommitOperation.access$4(CommitOperation.java:207)
+	at org.eclipse.egit.core.op.CommitOperation$1.run(CommitOperation.java:193)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2345)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2327)
+	at org.eclipse.egit.core.op.CommitOperation.execute(CommitOperation.java:204)
+	at org.eclipse.egit.ui.internal.commit.CommitJob.run(CommitJob.java:94)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: java.io.IOException: The process cannot access the file because another process has locked a portion of the file
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(FileInputStream.java:272)
+	at org.eclipse.jgit.util.IO.readFully(IO.java:302)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:100)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:184)
+	... 8 more
