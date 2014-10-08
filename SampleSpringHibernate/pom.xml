@@ -14,7 +14,7 @@
 	</description>
 	<properties>
 		<maven.test.failure.ignore>true</maven.test.failure.ignore>
-		<spring.framework.version>3.0.6.RELEASE</spring.framework.version>
+		<spring.framework.version>4.1.0.RELEASE</spring.framework.version>
 	</properties>
 
 	<dependencies>
@@ -22,7 +22,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>3.6.0.Final</version>
+			<version>4.3.6.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -77,8 +77,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
 		</plugins>
