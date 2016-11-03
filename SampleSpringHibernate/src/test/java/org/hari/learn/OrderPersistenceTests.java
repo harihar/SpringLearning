@@ -67,4 +67,9 @@ public class OrderPersistenceTests {
 		assertEquals(other, other.getItems().iterator().next().getOrder());
 	}
 
+	@Test
+	public void testSample() {
+		//testing content for github branching learning
+	}
+
 }
