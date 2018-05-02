@@ -25,7 +25,7 @@ resources:
   type: git
   source:
     uri: git@git.hexad.de:carnet/profile-integrity-service.git
-    branch: release-3.0.2
+    branch: release-3.0.3
     private_key: {{profileIntegrity_private_key}}
     #ignore_paths:
     #  - version
