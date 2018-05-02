@@ -1,0 +1,270 @@
+resource_types:
+- name: maven-resource
+  type: docker-image
+  source:
+    repository: pivotalpa/maven-resource
+    tag: latest
+
+- name: slack-notification
+  type: docker-image
+  source:
+    repository: cfcommunity/slack-notification-resource
+    tag: latest
+
+resources:
+- name: profileIntegrity-source-snapshot
+  type: git
+  source:
+    uri: git@git.hexad.de:carnet/profile-integrity-service.git
+    branch: master
+    private_key: {{profileIntegrity_private_key}}
+    #ignore_paths:
+    #  - version
+
+- name: profileIntegrity-source-release
+  type: git
+  source:
+    uri: git@git.hexad.de:carnet/profile-integrity-service.git
+    branch: release
+    private_key: {{profileIntegrity_private_key}}
+    #ignore_paths:
+    #  - version
+
+- name: development
+  type: cf
+  source:
+    api: {{cf_url}}
+    username: {{cf_user}}
+    password: {{cf_password}}
+    organization: carnet
+    space: development
+    skip_cert_check: true
+
+- name: integration
+  type: cf
+  source:
+    api: {{cf_url}}
+    username: {{cf_user}}
+    password: {{cf_password}}
+    organization: carnet
+    space: integration
+    skip_cert_check: true
+
+- name: QA
+  type: cf
+  source:
+    api: https://api.sys.emea.vwapps.io
+    username: {{cf_user_berlin}}
+    password: {{cf_password_berlin}}
+    organization: Carnet_Backend_Hexad
+    space: qa
+
+- name: TUI
+  type: cf
+  source:
+    api: https://api.sys.emea.vwapps.io
+    username: {{cf_user_berlin}}
+    password: {{cf_password_berlin}}
+    organization: Carnet_Backend_Hexad
+    space: tui
+
+- name: approval
+  type: cf
+  source:
+    api: https://api.sys.emea.vwapps.io
+    username: {{cf_user_berlin}}
+    password: {{cf_password_berlin}}
+    organization: Carnet_Backend_Hexad
+    space: approval
+
+- name: artifact-release
+  type: maven-resource
+  source:
+    url: https://ci.hexad.de/nexus/content/repositories/releases/
+    artifact: com.chb:ProfileIntegrityService:jar
+    username: {{nexus_user}}
+    password: {{nexus_password}}
+
+- name: artifact-snapshot
+  type: maven-resource
+  source:
+    url: https://ci.hexad.de/nexus/content/repositories/snapshots/
+    artifact: com.chb:ProfileIntegrityService:jar
+    username: {{nexus_user}}
+    password: {{nexus_password}}
+
+- name: version
+  type: semver
+  source:
+    driver: git
+    initial_version: 0.0.1
+    uri: git@git.hexad.de:carnet/profile-integrity-service.git
+    branch: version
+    file: version
+    private_key: {{profileIntegrity_private_key}}
+
+- name: slack-alert
+  type: slack-notification
+  source:
+    url: {{slack_url}}
+
+jobs:
+- name: build-snapshot
+  plan:
+    - get: profileIntegrity-source-snapshot
+      trigger: true
+    - task: build
+      params:
+        sonar_login: {{sonar_login}}
+        sonar_password: {{sonar_password}}
+      file: profileIntegrity-source-snapshot/concourse/buildSnapshot.yml
+      on_failure:
+        put: slack-alert
+        params:
+          channel: '#concourse'
+          text: |
+            FAILURE!!!!
+            Check it out at:
+            {{concourse_url}}/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+            or at:
+            {{concourse_url}}/builds/$BUILD_ID
+      on_success:
+        put: slack-alert
+        params:
+          channel: '#concourse'
+          text: |
+            SUCCESS!!!
+            Check it out at:
+            {{concourse_url}}/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+            or at:
+            {{concourse_url}}/builds/$BUILD_ID
+    - put: artifact-snapshot
+      params:
+        file: profileIntegrity-build/*.jar
+        version_file: profileIntegrity-build/version
+
+- name: build-release
+  plan:
+    - get: profileIntegrity-source-release
+      trigger: true
+    - get: version
+    - task: build
+      params:
+        sonar_login: {{sonar_login}}
+        sonar_password: {{sonar_password}}
+      file: profileIntegrity-source-release/concourse/buildRelease.yml
+      on_failure:
+        put: slack-alert
+        params:
+          channel: '#concourse'
+          text: |
+            FAILURE!!!!
+            Check it out at:
+            {{concourse_url}}/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+            or at:
+            {{concourse_url}}/builds/$BUILD_ID
+      on_success:
+        put: slack-alert
+        params:
+          channel: '#concourse'
+          text: |
+            SUCCESS!!!
+            Check it out at:
+            {{concourse_url}}/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+            or at:
+            {{concourse_url}}/builds/$BUILD_ID
+    - put: artifact-release
+      params:
+        file: profileIntegrity-build/*.jar
+        version_file: profileIntegrity-build/version
+    - put: version
+      params: {bump: patch}
+
+- name: deploy-to-development
+  plan:
+    - get: profileIntegrity-source-snapshot
+      passed: [build-snapshot]
+    - get: artifact-snapshot
+      trigger: true
+    - put: development
+      params:
+         manifest: profileIntegrity-source-snapshot/concourse/manifest.yml
+         current_app_name: dev-profileIntegrityService
+         path: artifact-snapshot/*.jar
+         environment_variables:
+           SPRING_PROFILES_ACTIVE: mock-protectr
+           SHARED_KEY: {{sharedKey}}
+           PCF_URL: http://dev-profilecompletionfrontend.cf.hexad.de
+
+- name: deploy-to-integration
+  plan:
+    - get: profileIntegrity-source-snapshot
+      passed: [deploy-to-development]
+    - get: artifact-snapshot
+    - put: integration
+      params:
+         manifest: profileIntegrity-source-snapshot/concourse/manifest.yml
+         current_app_name: int-profileIntegrityService
+         path: artifact-snapshot/*.jar
+         environment_variables:
+           SPRING_PROFILES_ACTIVE: mock-protectr
+           SHARED_KEY: {{sharedKey}}
+           PCF_URL: http://int-profileCompletionFrontend.cf.hexad.de
+
+- name: deploy-to-integration-mock
+  plan:
+    - get: profileIntegrity-source-snapshot
+      passed: [deploy-to-development]
+    - get: artifact-snapshot
+    - put: integration
+      params:
+         manifest: profileIntegrity-source-snapshot/concourse/manifest.yml
+         current_app_name: mock-int-profileIntegrityService
+         path: artifact-snapshot/*.jar
+         environment_variables:
+           SPRING_PROFILES_ACTIVE: mock-protectr,mock-services
+           SHARED_KEY: {{sharedKey}}
+           PCF_URL: http://int-profileCompletionFrontend.cf.hexad.de
+
+- name: deploy-to-QA
+  plan:
+    - get: profileIntegrity-source-release
+      passed: [build-release]
+    - get: artifact-release
+    - put: QA
+      params:
+         manifest: profileIntegrity-source-release/concourse/manifestEmea.yml
+         current_app_name: profileIntegrityService-qa
+         path: artifact-release/*.jar
+         environment_variables:
+            SHARED_KEY: {{sharedKey}}
+            PCF_URL: https://profileCompletionFrontend-qa.apps.emea.vwapps.io
+
+- name: deploy-to-TUI
+  plan:
+    - get: profileIntegrity-source-release
+      passed: [build-release]
+    - get: artifact-release
+    - put: TUI
+      params:
+         manifest: profileIntegrity-source-release/concourse/manifestEmea.yml
+         current_app_name: profileIntegrityService-tui
+         path: artifact-release/*.jar
+         environment_variables:
+           SHARED_KEY: {{sharedKey}}
+           PCF_URL: https://profileCompletionFrontend-tui.apps.emea.vwapps.io
+
+- name: deploy-to-approval
+  plan:
+    - get: profileIntegrity-source-release
+      passed: [deploy-to-TUI, deploy-to-QA]
+    - get: artifact-release
+    - put: approval
+      params:
+         manifest: profileIntegrity-source-release/concourse/manifestEmea.yml
+         current_app_name: profileIntegrityService-approval
+         path: artifact-release/*.jar
+         environment_variables:
+           CUSTOMER_PROFILE_HOST_ENV: https://customer-profile-sandbox.apps.emea.vwapps.io
+           SHARED_KEY: {{sharedKey}}
+           PCF_URL: https://profileCompletionFrontend-approval.apps.emea.vwapps.io
